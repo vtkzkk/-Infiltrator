@@ -4,6 +4,7 @@ Infiltrator
 Infiltrator é uma ferramenta de análise de segurança web que ajuda a identificar vulnerabilidades comuns em sites e aplicações web. Desenvolvida por Victor, a ferramenta é projetada para detectar uma variedade de problemas de segurança que podem comprometer a integridade e a confidencialidade dos dados.
 
 Principais Funcionalidades
+
 Verificação Rápida (-f, --fast)
 Realiza uma análise abrangente e rápida, verificando todas as vulnerabilidades suportadas: XSS, IDOR, redirecionamentos inseguros, SQL Injection, Command Injection e exposição de dados sensíveis.
 
