@@ -28,27 +28,3 @@ Identifica falhas de Command Injection, onde comandos do sistema podem ser execu
 Verificação de Dados Sensíveis (-e, --check-data)
 Procura por exposição de dados sensíveis, como senhas e tokens, que devem ser protegidos adequadamente.
 
-Como Usar
-Para usar o Infiltrator, basta executar o script Python com a URL que você deseja analisar e as opções desejadas. Por exemplo:
-
-Para uma verificação rápida:
-
-python3 Infiltrator.py -f https://example.com
-Para verificar todas as vulnerabilidades:
-
-
-python3 Infiltrator.py -a https://example.com
-Para verificar vulnerabilidades específicas, use as opções correspondentes:
-
-python3 Infiltrator.py -c https://example.com       # XSS
-python3 Infiltrator.py -d https://example.com       # IDOR
-python3 Infiltrator.py -r https://example.com       # Redirecionamentos
-python3 Infiltrator.py -s https://example.com       # SQL Injection
-python3 Infiltrator.py -m https://example.com       # Command Injection
-python3 Infiltrator.py -e https://example.com       # Dados Sensíveis
-
-
-Contribuições
-
-Contribuições para melhorar o Infiltrator são bem-vindas. Sinta-se à vontade para abrir issues ou pull requests com melhorias, correções de bugs ou novas funcionalidades.
-
