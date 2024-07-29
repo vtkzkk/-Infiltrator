@@ -1,55 +1,54 @@
-Infiltrator é uma ferramenta de análise de segurança que examina URLs em busca de vulnerabilidades comuns em websites. Ela verifica a presença de falhas de segurança como XSS (Cross-Site Scripting), IDOR (Insecure Direct Object References), redirecionamentos inseguros, injeções de SQL, injeções de comandos e exposição de dados sensíveis.
+Infiltrator
 
-Como usar:
 
-Abra o terminal.
+Infiltrator é uma ferramenta de análise de segurança web que ajuda a identificar vulnerabilidades comuns em sites e aplicações web. Desenvolvida por Victor, a ferramenta é projetada para detectar uma variedade de problemas de segurança que podem comprometer a integridade e a confidencialidade dos dados.
 
-Execute o comando com a URL e as opções desejadas. Use os seguintes comandos:
+Principais Funcionalidades
+Verificação Rápida (-f, --fast)
+Realiza uma análise abrangente e rápida, verificando todas as vulnerabilidades suportadas: XSS, IDOR, redirecionamentos inseguros, SQL Injection, Command Injection e exposição de dados sensíveis.
 
-Para realizar uma verificação rápida de todas as vulnerabilidades:
+Verificação Completa (-a, --all)
+Similar ao modo rápido, mas oferece uma análise detalhada das vulnerabilidades especificadas. Ideal para uma auditoria completa.
 
-bash
-Copiar código
+Verificação XSS (-c, --check-xss)
+Checa por vulnerabilidades de Cross-Site Scripting (XSS), onde scripts maliciosos podem ser injetados e executados no navegador dos usuários.
+
+Verificação IDOR (-d, --check-idor)
+Identifica vulnerabilidades de Insecure Direct Object References (IDOR), que podem permitir acesso não autorizado a objetos ou dados através de parâmetros de URL.
+
+Verificação de Redirecionamentos (-r, --check-redirects)
+Verifica se a aplicação permite redirecionamentos para URLs não confiáveis, uma falha que pode ser explorada para phishing ou ataques similares.
+
+Verificação SQL Injection (-s, --check-sql)
+Detecta vulnerabilidades de SQL Injection, onde comandos SQL maliciosos podem ser inseridos para acessar ou modificar dados na base de dados.
+
+Verificação de Command Injection (-m, --check-command)
+Identifica falhas de Command Injection, onde comandos do sistema podem ser executados a partir de entradas não seguras.
+
+Verificação de Dados Sensíveis (-e, --check-data)
+Procura por exposição de dados sensíveis, como senhas e tokens, que devem ser protegidos adequadamente.
+
+Como Usar
+Para usar o Infiltrator, basta executar o script Python com a URL que você deseja analisar e as opções desejadas. Por exemplo:
+
+Para uma verificação rápida:
+
 python3 Infiltrator.py -f https://example.com
-Para verificar todas as vulnerabilidades específicas:
+Para verificar todas as vulnerabilidades:
 
-bash
-Copiar código
+
 python3 Infiltrator.py -a https://example.com
-Para verificar vulnerabilidades específicas, use uma ou mais das seguintes opções:
+Para verificar vulnerabilidades específicas, use as opções correspondentes:
 
-XSS (Cross-Site Scripting):
-bash
-Copiar código
-python3 Infiltrator.py -c https://example.com
-IDOR (Insecure Direct Object References):
-bash
-Copiar código
-python3 Infiltrator.py -d https://example.com
-Redirecionamento aberto (Open Redirect):
-bash
-Copiar código
-python3 Infiltrator.py -r https://example.com
-SQL Injection:
-bash
-Copiar código
-python3 Infiltrator.py -s https://example.com
-Command Injection:
-bash
-Copiar código
-python3 Infiltrator.py -m https://example.com
-Exposição de dados sensíveis:
-bash
-Copiar código
-python3 Infiltrator.py -e https://example.com
-Opções disponíveis:
+python3 Infiltrator.py -c https://example.com       # XSS
+python3 Infiltrator.py -d https://example.com       # IDOR
+python3 Infiltrator.py -r https://example.com       # Redirecionamentos
+python3 Infiltrator.py -s https://example.com       # SQL Injection
+python3 Infiltrator.py -m https://example.com       # Command Injection
+python3 Infiltrator.py -e https://example.com       # Dados Sensíveis
 
--f, --fast: Realiza uma verificação rápida de todas as vulnerabilidades.
--a, --all: Verifica todas as vulnerabilidades específicas.
--c, --check-xss: Verifica vulnerabilidades de XSS (Cross-Site Scripting).
--d, --check-idor: Verifica vulnerabilidades de IDOR (Insecure Direct Object References).
--r, --check-redirects: Verifica vulnerabilidades de redirecionamento aberto (Open Redirect).
--s, --check-sql: Verifica vulnerabilidades de SQL Injection.
--m, --check-command: Verifica vulnerabilidades de Command Injection.
--e, --check-data: Verifica exposição de dados sensíveis.
-Ao executar o comando, a ferramenta irá analisar a URL fornecida e exibir um relatório no terminal com as vulnerabilidades encontradas e exemplos de exploração.
+
+Contribuições
+
+Contribuições para melhorar o Infiltrator são bem-vindas. Sinta-se à vontade para abrir issues ou pull requests com melhorias, correções de bugs ou novas funcionalidades.
+
