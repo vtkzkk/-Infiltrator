@@ -1,31 +1,51 @@
-Infiltrator
+Infiltrator - Ferramenta de Verificação de Vulnerabilidades
+Descrição
+Infiltrator é uma ferramenta de verificação de vulnerabilidades desenvolvida para testar e identificar possíveis falhas de segurança em páginas da web. A ferramenta realiza uma análise de segurança automatizada em URLs fornecidas, buscando por uma variedade de vulnerabilidades comuns, incluindo:
 
+Cross-Site Scripting (XSS)
+Insecure Direct Object References (IDOR)
+Open Redirects
+SQL Injection
+Command Injection
+Exposição de Dados Sensíveis
+Funcionalidades
+Verificação XSS: Testa URLs para identificar se o site está vulnerável a ataques de Cross-Site Scripting.
+Verificação IDOR: Testa URLs para identificar possíveis referências inseguras a objetos diretos.
+Verificação de Redirecionamentos Abertos: Verifica se a aplicação permite redirecionamentos para URLs externas não confiáveis.
+Verificação de SQL Injection: Testa URLs para identificar possíveis vulnerabilidades de injeção de SQL.
+Verificação de Command Injection: Verifica se há possibilidade de injeção de comandos no sistema.
+Verificação de Exposição de Dados Sensíveis: Identifica se dados sensíveis estão expostos nas páginas analisadas.
 
-Infiltrator é uma ferramenta de análise de segurança web que ajuda a identificar vulnerabilidades comuns em sites e aplicações web. Desenvolvida por Victor, a ferramenta é projetada para detectar uma variedade de problemas de segurança que podem comprometer a integridade e a confidencialidade dos dados.
+Como Usar
 
-Principais Funcionalidades
+git clone https://github.com/vtkzkk/-Infiltrator.git
 
-Verificação Rápida (-f, --fast)
-Realiza uma análise abrangente e rápida, verificando todas as vulnerabilidades suportadas: XSS, IDOR, redirecionamentos inseguros, SQL Injection, Command Injection e exposição de dados sensíveis.
+Execute a Ferramenta:
 
-Verificação Completa (-a, --all)
-Similar ao modo rápido, mas oferece uma análise detalhada das vulnerabilidades especificadas. Ideal para uma auditoria completa.
+Execute a ferramenta a partir da linha de comando, passando a URL que deseja testar e as opções desejadas. Abaixo estão alguns exemplos de uso:
 
-Verificação XSS (-c, --check-xss)
-Checa por vulnerabilidades de Cross-Site Scripting (XSS), onde scripts maliciosos podem ser injetados e executados no navegador dos usuários.
+Verificação Rápida (todas as vulnerabilidades):
 
-Verificação IDOR (-d, --check-idor)
-Identifica vulnerabilidades de Insecure Direct Object References (IDOR), que podem permitir acesso não autorizado a objetos ou dados através de parâmetros de URL.
+python3 scanner.py -f http://exemplo.com
+Verificar Vulnerabilidades Específicas:
 
-Verificação de Redirecionamentos (-r, --check-redirects)
-Verifica se a aplicação permite redirecionamentos para URLs não confiáveis, uma falha que pode ser explorada para phishing ou ataques similares.
+python3 scanner.py -c -d -r -s -m -e http://exemplo.com
+Nesse exemplo, as opções especificadas são:
 
-Verificação SQL Injection (-s, --check-sql)
-Detecta vulnerabilidades de SQL Injection, onde comandos SQL maliciosos podem ser inseridos para acessar ou modificar dados na base de dados.
+-c para verificar XSS
+-d para verificar IDOR
+-r para verificar Open Redirects
+-s para verificar SQL Injection
+-m para verificar Command Injection
+-e para verificar exposição de dados sensíveis
+Verificar Todas as Vulnerabilidades:
 
-Verificação de Command Injection (-m, --check-command)
-Identifica falhas de Command Injection, onde comandos do sistema podem ser executados a partir de entradas não seguras.
+python3 scanner.py -a http://exemplo.com
+Leia o Relatório:
 
-Verificação de Dados Sensíveis (-e, --check-data)
-Procura por exposição de dados sensíveis, como senhas e tokens, que devem ser protegidos adequadamente.
+Após a execução, a ferramenta gerará um relatório detalhado das vulnerabilidades encontradas. O relatório inclui informações sobre a vulnerabilidade, a localização e exemplos de exploração.
 
+Exemplo de Uso
+
+python3 scanner.py -f http://example.com
+Isso executará uma verificação completa de todas as vulnerabilidades configuradas para a URL fornecida.
